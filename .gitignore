@@ -1,0 +1,5 @@
+*.o
+gpsmon
+gpsmon_master
+gpsmon_slave
+

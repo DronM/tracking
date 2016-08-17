@@ -1,0 +1,8 @@
+#!/bin/sh
+#MYSQL version
+#gcc -o /home/andrey/tracking/trservd $(mysql_config --cflags) -L/usr/lib -lmysqlclient trservpd.c server.c db_manager_mysql.c tracker_report_syst.c common.c
+gcc -c trserv.c server.c db_manager_mysql.c tracker_report_syst.c common.c -I/usr/include/mysql
+#-DBIG_JOINS=1
+#-fno-strict-aliasing
+# $(mysql_config --cflags)0
+gcc trserv.o server.o db_manager_mysql.o tracker_report_syst.o common.o $(mysql_config --libs) -o trserv
